@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
+    </head>
+
+    <body>
+        <div class="backgroundStyle">
+            <div class="divStyle">
+                <input type="text" id="firstNumber" class="inputStyle">
+                <select id="operation" class="selectStyle">
+                    <option>+</option>
+                    <option>-</option>
+                    <option>*</option>
+                    <option>/</option>
+                </select>
+                <input type="text" id="secondNumber" class="inputStyle">
+            </div>
+            <div class="divStyle">
+                <button class="buttonStyle" onclick="onClickHandler()"> подсчитать </button>
+            </div>
+            <div class="divStyle">
+                <div class="outputStyle">
+                    <textarea id="prev_result" class="textareaPreviousOutputStyle" readonly></textarea>
+                    <textarea id="result" class="textareaLastOutputStyle" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
