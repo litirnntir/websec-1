@@ -1,36 +1,88 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f5f5f5;
+/* Стили для фона и контейнера */
+.backgroundStyle {
+    background-color: rgb(186,255,200);
+    border-radius: 7px;
+    width: 500px;
+    height: 189px;
+    margin: 0 auto;
 }
-.calculator {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+.divStyle {
+    margin: 2%;
+    height: auto;
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(186,255,200);
+}
+
+/* Стили для ввода, кнопки, вывода */
+.inputStyle, .selectStyle, .buttonStyle, .outputStyle, .textareaLastOutputStyle, .textareaPreviousOutputStyle {
+    font-family: 'Verdana', Times, sans-serif;
+    font-size: small;
+    background-color: rgb(186,255,200);
+    color: red;
+    border-radius: 5px;
+    border-width: 1.5px;
+    border-style: dotted;
+    border-color: red;
+    font-weight: bold;
+}
+
+.inputStyle {
+    width: 30%;
+    padding: 6px;
+}
+
+.selectStyle {
+    width: 20%;
+    padding: 3px;
+}
+
+.buttonStyle {
+    width: 25%;
+    padding: 6px;
+    word-wrap: break-word;
+}
+
+.textareaLastOutputStyle, .textareaPreviousOutputStyle {
+    width: 98%;
+    height: 5%;
+    border-color: rgb(186,255,200);
+    resize: none;
     text-align: center;
 }
-.inputs {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+
+.textareaPreviousOutputStyle {
+    opacity: .4;
 }
-input, select, button {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+
+.outputStyle {
+    width: 70%;
 }
-button {
-    background: #28a745;
-    color: white;
-    cursor: pointer;
-}
-button:hover {
-    background: #218838;
-}
-.results {
-    margin-top: 15px;
+
+/* Адаптивность для мобильных устройств */
+@media screen and (max-width: 600px) {
+    .backgroundStyle {
+        width: 100%;
+        min-width: 50px;
+        height: 260px;
+    }
+
+    .inputStyle {
+        width: 60%;
+    }
+
+    .divStyle {
+        flex-direction: column;
+    }
+
+    .buttonStyle {
+        width: 100%;
+    }
+
+    .textareaLastOutputStyle, .textareaPreviousOutputStyle {
+        width: 100%;
+    }
 }

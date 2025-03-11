@@ -8,24 +8,26 @@
     <title>Калькулятор</title>
 </head>
 <body>
-<main class="container">
-    <section class="calculator">
-        <div class="inputs">
-            <input type="number" id="num1" placeholder="Число 1">
-            <select id="operator">
-                <option value="add">+</option>
-                <option value="sub">-</option>
-                <option value="mul">×</option>
-                <option value="div">÷</option>
+    <div class="backgroundStyle">
+        <div class="divStyle">
+            <input type="text" id="firstNumber" class="inputStyle" placeholder="Число 1">
+            <select id="operation" class="selectStyle">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">×</option>
+                <option value="/">÷</option>
             </select>
-            <input type="number" id="num2" placeholder="Число 2">
+            <input type="text" id="secondNumber" class="inputStyle" placeholder="Число 2">
         </div>
-        <button id="calculate">Вычислить</button>
-        <div class="results">
-            <p id="previous">Предыдущее: <span>-</span></p>
-            <p id="current">Результат: <span>-</span></p>
+        <div class="divStyle">
+            <button id="calculate" class="buttonStyle">Вычислить</button>
         </div>
-    </section>
-</main>
+        <div class="divStyle">
+            <div class="outputStyle">
+                <textarea id="prev_result" class="textareaPreviousOutputStyle" readonly>Предыдущее: -</textarea>
+                <textarea id="result" class="textareaLastOutputStyle" readonly>Результат: -</textarea>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

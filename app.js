@@ -1,34 +1,43 @@
-document.getElementById("calculate").addEventListener("click", function() {
-    let num1 = parseFloat(document.getElementById("num1").value);
-    let num2 = parseFloat(document.getElementById("num2").value);
-    let operator = document.getElementById("operator").value;
-    let prevResult = document.getElementById("current").querySelector("span").innerText;
+function onClickHandler() {
+    let v1 = document.getElementById("firstNumber").value;
+    let operation = document.getElementById("operation").value;
+    let v3 = document.getElementById("secondNumber").value;
 
-    if (isNaN(num1) || isNaN(num2)) {
-        alert("Введите числа");
+    let prev_result = document.getElementById("result").value;
+    document.getElementById("prev_result").value = prev_result;
+
+    v1 = parseFloat(v1);
+    v3 = parseFloat(v3);
+    let result = null;
+
+    if (isNaN(v1) || isNaN(v3)) {
+        alert("Введите только числа");
         return;
     }
 
-    let result;
-    switch (operator) {
-        case "add":
-            result = num1 + num2;
+    switch (operation) {
+        case "+":
+            result = v1 + v3;
             break;
-        case "sub":
-            result = num1 - num2;
+        case "-":
+            result = v1 - v3;
             break;
-        case "mul":
-            result = num1 * num2;
+        case "*":
+            result = v1 * v3;
             break;
-        case "div":
-            if (num2 === 0) {
-                alert("Деление на ноль!");
+        case "/":
+            // Используем Math.abs для безопасного сравнения с нулем
+            if (Math.abs(v3) < Number.EPSILON) {
+                alert("На ноль не делить!!!");
                 return;
+            } else {
+                result = v1 / v3;
             }
-            result = num1 / num2;
             break;
     }
 
-    document.getElementById("previous").querySelector("span").innerText = prevResult;
-    document.getElementById("current").querySelector("span").innerText = result;
-});
+    document.getElementById("result").value = "".concat(v1, " ", operation, " ", v3, " = ", result);
+}
+
+// Слушаем кнопку и вызываем обработчик
+document.getElementById("calculate").addEventListener("click", onClickHandler);
